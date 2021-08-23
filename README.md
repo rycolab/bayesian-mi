@@ -47,6 +47,21 @@ There are three tasks available in this repository: pos_tag; dep_label; and pars
 The model studied in this paper was: 'mlp'.
 
 
+## Compile results
+
+After training the models for all languages, you can compiled results with the command
+```bash
+$ make get_results TASK=<task>
+```
+
+## Plot results
+
+Finally, you can plot the pareto curves in the paper with the command
+```bash
+$ python src/h03_analysis/plot_pareto.py --task <task> --language <language>
+```
+
+
 ## Extra Information
 
 #### Contact
