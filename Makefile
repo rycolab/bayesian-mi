@@ -1,6 +1,6 @@
 LANGUAGE := marathi
 TASK := pos_tag
-REPRESENTATION := onehot
+REPRESENTATION := random
 MODEL := mlp
 DATA_DIR := ./data
 CHECKPOINT_DIR := ./checkpoints
