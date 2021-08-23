@@ -18,8 +18,9 @@ class BertPerWordModel(nn.Module):
         return model
 
     def forward(self, x, attention_mask, mappings):
-        output, _ = self.bert(x, attention_mask=attention_mask)
-        return self.from_bpe_to_word(output, mappings)
+        outputs = self.bert(x, attention_mask=attention_mask)
+        last_layer = outputs[0]
+        return self.from_bpe_to_word(last_layer, mappings)
 
     def from_bpe_to_word(self, output, mappings):
         batch_size = output.size(0)
