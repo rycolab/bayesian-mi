@@ -19,29 +19,19 @@ from util import util
 
 aspect = {
     'height': 7,
-    # 'height': 3.5,
-    # 'font_scale': 1.8,
-    # 'font_scale': 1.2,
     'font_scale': 1.5,
-    # 'font_scale': 7.5,
     'labels': True,
     'name_suffix': '',
-    # 'ratio': 2.125,
     'ratio': 1.625,
 }
 fig_size = plt.rcParams["figure.figsize"]
 fig_size[0] = 4.5
 fig_size[1] = 3.5
-# del mpl.font_manager.weight_dict['roman']
-# mpl.font_manager._rebuild()
-# sns.set_palette("muted")
-# sns.set_palette("colorblind")
+
 sns.set_palette("Set2")
 sns.set_context("notebook", font_scale=aspect['font_scale'])
 mpl.rc('font', family='serif', serif='Times New Roman')
-# mpl.rc('text', usetex=True)
-# sns.set_style({'font.family': 'serif', 'font.serif': 'Times New Roman', 'axes.labelweigth': 'normal'})
-# plt.rcParams['axes.labelweight'] = 'bold'
+
 print(plt.rcParams['axes.prop_cycle'].by_key()['color'])
 
 
@@ -52,8 +42,6 @@ def get_args():
     parser.add_argument("--data-path", type=str, default='data/processed/')
     parser.add_argument('--task', type=str, required=True)
     parser.add_argument('--language', type=str, required=True)
-    # # Others
-    # parser.add_argument("--checkpoint-path", type=str, default='checkpoints/')
 
     args = parser.parse_args()
 
@@ -85,8 +73,6 @@ def get_pareto_points_per_model(df, x_axis, y_axis):
         dfs += [df_temp]
 
     return pd.concat(dfs)
-    # df.sort_values(x_axis, ascending=True, inplace=True)
-    # import ipdb; ipdb.set_trace()
 
 
 def get_pareto_frontiers(df, x_axis, y_axis, representation, max_x):
