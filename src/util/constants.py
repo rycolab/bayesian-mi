@@ -4,7 +4,7 @@ import torch
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
-USED_LANGUAGES = ['english', 'basque', 'finnish', 'marathi', 'turkish']
+USED_LANGUAGES = ['english', 'basque', 'marathi', 'turkish']
 
 LANGUAGE_CODES = {
     'english': 'en',
